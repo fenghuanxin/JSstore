@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>产品详细说明</title>
+		<script type="text/javascript" src="./js/gettime.js"></script>
+		<script type="text/javascript" src="./js/jquery-3.4.1.js"></script>
+		<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="./css/basic.css" />
+		<script type="text/javascript" src="./js/basic.js"></script>
+		<script type="text/javascript">
+			function changeimgs()
+			{
+				var bigimg = document.getElementById("bigimg");
+				bigimg.src = event.srcElement.src;
+			}
+			
+			//显示指定id的标签
+			function displayobj(id)
+			{
+				var obj = document.getElementById(id);
+				obj.style.display="block";
+			}
+			//隐藏指定id的标签
+			function hiddenobj(id)
+			{
+				var obj = document.getElementById(id);
+				obj.style.display="none";
+			}
+			
+			//初始化放大镜图片
+			function MiniDiv()
+			{
+				var obj1 = document.getElementById("targetImg");
+				var obj2 = document.getElementById(event.srcElement.id);
+				obj1.src = obj2.src;
+			}
+			
+			//放大镜特效
+			function MMove()
+			{
+				//显示放大镜
+				displayobj("bigimgboxdiv");
+				//初始化放大镜盒子图片
+				MiniDiv();
+				//获取放大镜图像对象
+				var obj = document.getElementById("targetImg");
+				//获取鼠标移动的相对位移
+				var offx = obj.width/event.srcElement.width;
+				var offy = obj.height/event.srcElement.height;
+				
+				//获取放大镜div对象
+				var div = document.getElementById(bigimgboxdiv);
+				
+				//重新设置容器的滚动条
+				div.scrollLeft=(event.offsetX*offx);
+				div.scrollTop=(event.offsetY*offy);
+			
+			}
+			
+			//显示指定id的选项卡容器
+			function showdivbox(number)
+			{
+				//alert(number)
+				
+				for(var i=1;i<=5;i++)
+				{
+					if(i==number)
+					{
+						var obj = document.getElementById("info"+number);
+						obj.style.display="";
+					}else
+					{
+						var obj = document.getElementById("info"+i);
+						obj.style.display="none";
+					}
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="containter">
+			<!-- 网站头部 -->
+			<div id="pagetop" style="position: relative;">
+				<div class="indexlogo"><img src="./img/logo.png"></div>
+				<div class="topinfo">
+					<span>
+						欢迎登陆四加三商城！ 
+						要购物？
+						<a href="login.html">先登陆</a>
+						新用户？
+						<a href="register.html">免费注册</a>
+					</span>
+				</div>
+				<div class="topnav" style="clear: both; position: absolute; top:0px; left: 600px;">
+					<div class="topnavlist">
+						<ul>
+							<li><a href="">帮助中心</a></li>
+							<li><a href="">客户反馈</a></li>
+							<li><a href="">网站地图</a></li>
+							<li><a href="">加入收藏</a></li>
+							<br />
+							<li style="width: 200px;"><span id="Clock"></span></li>
+						</ul>
+					</div>
+					<div>
+						<marquee direction="up" height="25px" style="text-indent:40px;"><a href="">新公告：明天有秒杀公告</a></marquee>
+					</div>
+				</div>
+				
+				<!-- 主导航 -->
+				<div id="nav" style="clear: both;">
+					<div style="background: url(./img/top_1.png); height: 35px;">
+						<ul id="navlist">
+							<li><a href="index.html">网站首页</a></li>
+							<li><a href="#">分类导航</a></li>
+							<li><a href="#">购物帮助</a></li>
+							<li><a href="productlist.html">产品列表</a></li>
+							<li><a href="prolistproice.html">报价单</a></li>
+							<li><a href="close-account.html">发货单</a></li>
+						</ul>
+					</div>
+					<div class="cast">
+						<span style="color: #fff; font-size: 14px;">商品搜索</span>
+						<span>
+							<select>
+								<option>所有分类</option>
+								<option>最新商品</option>
+								<option>热卖商品</option>
+							</select>
+						</span>
+						<span>
+							<input type="text" maxlength="100" size="50"/>
+							<input type="button" value="搜索"/>
+						</span>
+						<span>
+							<a href="high.html" style="color: #fff;">高级搜索</a>
+						</span>
+						<div style="background: url(./img/d3.png); width: 300px; height: 24px; float: right; line-height: 24px;">
+							<span style="position: absolute; right: 190px;">
+								<a href="shoppingcart.html">购物车暂时为空</a>
+							</span>
+							<span style="position: absolute; right: 95px;">
+								<a href="close-account.html">去结算</a>
+							</span>
+							<span style="position: absolute; right: 10px;">
+								<a href="login.html">用户中心</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+
+			<!-- 网站主体 -->
+			<div id="pagebody" style="min-height: 500px;">
+				
+				<!-- 左部 -->
+				<div id="bleft">
+					<div id="userbox" class="userbox">
+						<h3>用户信息</h3>
+						<ul>		
+							<li style="background: url(./img/1.png) no-repeat center left;"><a href="register.html">注册/登陆</a></li>
+							<li style="background: url(./img/8.png) no-repeat center left;"><a href="shoppingcart.html">购物车（0）</a></li>
+							<li style="background: url(./img/10.png) no-repeat center left;"><a href="productlist.html">对比（0）</a></li>						
+						</ul>
+					</div>
+					<div id="collaboratebox">
+						<h4>最近浏览商品</h4>
+						<div class="servicebox" style="border: 1px solid red; border-bottom: 1px dotted #ccc; border-top: none;">
+							<div style="width: 50px; float: left; line-height: 100px;">
+								<img src="img/electric-cooker.png" width="50" height="50"/>
+							</div>
+							<div style="width: 120px; float: left; margin-left: 10px; line-height: 25px;">
+								无敌电饭，价格实惠，品质保证。无敌电饭，价格实惠，品质保证。
+							</div>					
+						</div>
+						<div class="servicebox" style="border: 1px solid red; border-bottom: 1px dotted #ccc; border-top: none;">
+							<div style="width: 50px; float: left; line-height: 100px;">
+								<img src="./img/commodity6.png" width="50" height="50"/>
+							</div>
+							<div style="width: 120px; float: left; margin-left: 10px; line-height: 25px;">
+								无敌拖鞋，价格实惠，品质保证。无敌拖鞋，打人贼强，老板担保。
+							</div>					
+						</div>
+						
+					</div>
+					<div id="productbox" class="productbox">
+						<h3>商品分类</h3>
+						<div style="border: solid 1px red; border-top: none;">
+							<div class="box">
+								<h4><img src="./img/dot.png">家用电器</h4>
+								<ul>
+									<li><span><a href="#">大冰箱</a></span>|<span><a href="#">电磁炉</a></span></li>
+									<li><span><a href="#">冷饮机</a></span>|<span><a href="#">油烟机</a></span></li>
+									<li><span><a href="#">空调器</a></span>|<span><a href="#">热水器</a></span></li>
+									<li><span><a href="#l">电风扇</a></span>|<span><a href="#">加湿器</a></span></li>
+								</ul>
+							</div>
+							<div class="box">
+								<h4><img src="./img/dot.png">手机数码</h4>
+								<ul>
+									<li><span><a href="producttype.html">摄像机</a></span>|<span><a href="producttype.html">数码相机</a></span></li>
+									<li><span><a href="producttype.html">扫描仪</a></span>|<span><a href="producttype.html">数控家电</a></span></li>
+									<li><span><a href="producttype.html">无人机</a></span>|<span><a href="producttype.html">手机</a></span></li>
+									<li><span><a href="producttype.html">扫描仪</a></span>|<span><a href="producttype.html">游戏主机</a></span></li>
+								</ul>
+							</div>
+							<div class="box">
+								<h4><img src="./img/dot.png">电脑产品</h4>
+								<ul>
+									<li><span><a href="producttype.html">计算机</a></span>|<span><a href="producttype.html">路由器</a></span></li>
+									<li><span><a href="producttype.html">收音机</a></span>|<span><a href="producttype.html">笔记本电源</a></span></li>
+									<li><span><a href="producttype.html">电子书</a></span>|<span><a href="producttype.html">台式配件</a></span></li>
+									<li><span><a href="producttype.html">交换机</a></span>|<span><a href="producttype.html">电源</a></span></li>
+								</ul>
+							</div>
+							<div class="box">
+								<h4><img src="./img/dot.png">日用百货</h4>
+								<ul>
+									<li><span><a href="producttype.html">垃圾桶</a></span>|<span><a href="producttype.html">洗菜篮</a></span></li>
+									<li><span><a href="producttype.html">喷雾器</a></span>|<span><a href="producttype.html">紫砂杯</a></span></li>
+									<li><span><a href="producttype.html">储物罐</a></span>|<span><a href="producttype.html">遮阳伞</a></span></li>
+									<li><span><a href="producttype.html">削皮器</a></span>|<span><a href="producttype.html">工艺品摆件</a></span></li>
+								</ul>
+							</div>
+						</div>
+					</div>			
+
+
+				</div>
+				
+				<!-- 中部 -->
+				<div id="bmiddle" style="width:760px; min-height: 400px; text-indent: 10px; margin-top: 10px;">
+					<div style="background-color: lightblue; line-height: 29px;">
+						<img src="./img/oblique-arrow.png" />
+						<span>你的位置:</span>
+						<span><a href="index.html">首页</a></span>
+						》
+						<span><a href="index.html">家用电器</a></span>
+					</div>
+					
+					<!-- 产品详细 -->
+					<div style="width: 760px; min-height: 400px; text-indent: 10px; margin-top: 10px; clear: both;">
+						<div id="proimgbox">
+							<div id="bigimgbox">
+								<img  src="./img/electric-cooker.png" width="300px" height="300px" id="bigimg" onmousemove="MMove()" onmouseout="hiddenobj('bigimgboxdiv')">
+							</div>
+							<div id="smallimgbox">
+								<div><img src="./img/electric-cooker.png" id="p1" onmouseover="changeimgs(); MiniDiv()"></div>
+								<div><img src="./img/commodity1.png" id="p2" onmouseover="changeimgs(); MiniDiv()"></div>
+								<div><img src="./img/commodity2.png" id="p3" onmouseover="changeimgs(); MiniDiv()"></div>
+								<div><img src="./img/commodity3.png" id="p4" onmouseover="changeimgs(); MiniDiv()"></div>
+							</div>
+							
+						</div>
+						
+						<div id="proinfolist" style="position: relative;">
+							<div id="title">
+								<span style="font-size: 18px; font-weight: bold; color: #003;" >测试第一号产品</span>
+								<span>(<a href="#">0篇用户评论</a><a href="#">写评论</a>)</span>
+							</div>
+							<div><span>商品编号:</span></div>
+							<div><span>商品积分:</span></div>
+							<div><span>市场价格:</span></div>
+							<div><span>本站价格:</span></div>
+							<div><span>为您节省:</span></div>
+							<div>
+								<span>订购数量:</span>
+								<span><input type="text"></span>
+							</div>
+							<div>
+								<a href="shoppingcart.html">
+									<img src="./img/prolistinfobg1.png" />
+								</a>
+								<a href="productlist.html">
+									<img src="./img/prolistinfobg2.png" />
+								</a>
+								<a href="#">
+									<img src="./img/prolistinfobg3.png" />
+								</a>
+							</div>
+							
+							<!-- 放大镜盒子 -->
+							<div id="bigimgboxdiv" style="display: none; position: absolute; top: 20px; left: 10px; border: 1px solid #ccc; width: 300px; height: 300px; overflow: hidden; z-index: 1000;">
+								<img id="targetImg" width="800" height="800"/>
+							</div>
+						</div>
+					</div>
+					
+					<!-- 广告 -->
+					<div id="proinfoad">
+						<a href="#">下一个商品  美的（电脑版）双胆锅</a>
+						<span style="margin-left: 100px; margin-right: 10px; margin-top: 10px;">
+							<a href="#">
+								<img src="img/pay1.png" width="125" height="28" />
+							</a>
+						</span>
+						<span style="margin-top: 10px;">
+							<a href="#">
+								<img src="img/pay2.png" width="125" height="28" />
+							</a>
+						</span>
+						
+					</div>
+					
+					<!-- 产品详细说明 -->
+					<div>
+						<div id="proinfotitle">
+							<div onmouseover="showdivbox(1)"><a href="#">详细说明</a></div>
+							<div onmouseover="showdivbox(2)"><a href="#">相关商品</a></div>
+							<div onmouseover="showdivbox(3)"><a href="#">商品评论</a></div>
+							<div onmouseover="showdivbox(4)"><a href="#">付款方式</a></div>
+							<div onmouseover="showdivbox(5)"><a href="#">送货方式</a></div>
+						</div>
+						<div id="info1" class="proinfobox">
+							个性化计算机
+								
+								新款InspironTM 560s台式机拥有您梦寐以求的一切。
+								
+								多种动感色彩可供选择，突显您的个人风格，让您更出众。
+								
+								更有多款英特尔处理器和键盘选择，以及其他可定制的功能，让您可根据需求进行配置。
+								
+								所以无论您是要上网冲浪、给朋友和家人发电子邮件、看自己喜欢的电影，还是要写博客，Inspiron台式机都能让您尽如所愿。
+								
+						</div>
+						<div id="info2" class="proinfobox" style="display: none;">
+							相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品
+							相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品
+							相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品
+						</div>
+						<div id="info3" class="proinfobox" style="display: none;">
+							相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品
+							相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品
+							相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品
+						</div>
+						<div id="info4" class="proinfobox" style="display: none;">
+							相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品
+							相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品
+							相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品
+						</div>
+						<div id="info5" class="proinfobox" style="display: none;">
+							相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品
+							相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品
+							相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品相关商品
+						</div>
+					</div>
+					
+				</div>
+				
+
+			</div>
+			
+			<!-- 网站底部 -->
+			<div id="pagefooter" style="width: 980px; margin: 0px auto;">
+				<!-- 底部导航 -->
+				<div id="footnav">
+					<ul>
+						<li class="listnav">
+							<h4>关于我们</h4>
+							<ul>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">企业介绍</a></li>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">发展经历</a></li>
+							</ul>
+						</li>
+						<li class="listnav">
+							<h4>付款方式</h4>
+							<ul>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">企业介绍</a></li>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">发展经历</a></li>
+							</ul>
+						</li>
+						<li class="listnav">
+							<h4>送货方式</h4>
+							<ul>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">企业介绍</a></li>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">发展经历</a></li>
+							</ul>
+						</li>
+						<li class="listnav">
+							<h4>售后服务</h4>
+							<ul>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">企业介绍</a></li>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">发展经历</a></li>
+							</ul>
+						</li>
+						<li class="listnav">
+							<h4>购物帮助</h4>
+							<ul>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">企业介绍</a></li>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">发展经历</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>				
+			</div>	
+			<div id="footinfo">
+				<div>
+					<span>淘宝店</span>
+					<span>易趣店</span>
+					<span>京东店</span>
+					<span>有啊店</span>
+				</div>
+				<div>
+					<span>CopyRight2019.11 版权所有: 四加三商城</span>
+				</div>
+				<div>
+					<span>客服热线: 888-888888, 售后服务: 888-000088</span>
+				</div>
+				<div>
+					<span>客服邮箱:437737257@qq.com, 技术支持: 15988652@qq.com</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

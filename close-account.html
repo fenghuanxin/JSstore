@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>结算页面</title>
+		<script type="text/javascript" src="./js/gettime.js"></script>
+		<script type="text/javascript" src="./js/jquery-3.4.1.js"></script>
+		<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/basic.css" />
+		<script type="text/javascript" src="./js/basic.js"></script>
+		<script type="text/javascript" src="js/jquery.validate.js"></script>
+		<script type="text/javascript" src="js/ValidateMessage_ZW.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/validateExtenderCss.css" />
+		<link rel="stylesheet" type="text/css" href="./css/close-account.css" />
+		<script type="text/javascript" src="./js/close-account.js"></script>
+	</head>
+
+	<body>
+		<div id="containter">
+			<!-- 网站头部 -->
+			<div id="pagetop" style="position: relative;">
+				<div class="indexlogo"><img src="./img/logo.png"></div>
+				<div class="topinfo">
+					<span>
+						欢迎登陆四加三商城！ 
+						要购物？
+						<a href="login.html">先登陆</a>
+						新用户？
+						<a href="register.html">免费注册</a>
+					</span>
+				</div>
+				<div class="topnav" style="clear: both; position: absolute; top:0px; left: 600px;">
+					<div class="topnavlist">
+						<ul>
+							<li><a href="">帮助中心</a></li>
+							<li><a href="">客户反馈</a></li>
+							<li><a href="">网站地图</a></li>
+							<li><a href="">加入收藏</a></li>
+							<br />
+							<li style="width: 200px;"><span id="Clock"></span></li>
+						</ul>
+					</div>
+					<div>
+						<marquee direction="up" height="25px" style="text-indent:40px;"><a href="">新公告：明天有秒杀公告</a></marquee>
+					</div>
+				</div>
+				
+				<!-- 主导航 -->
+				<div id="nav" style="clear: both;">
+					<div style="background: url(./img/top_1.png); height: 35px;">
+						<ul id="navlist">
+							<li><a href="index.html">网站首页</a></li>
+							<li><a href="#">分类导航</a></li>
+							<li><a href="#">购物帮助</a></li>
+							<li><a href="productlist.html">产品列表</a></li>
+							<li><a href="prolistproice.html">报价单</a></li>
+							<li><a href="close-account.html">发货单</a></li>
+						</ul>
+					</div>
+					<div class="cast">
+						<span style="color: #fff; font-size: 14px;">商品搜索</span>
+						<span>
+							<select>
+								<option>所有分类</option>
+								<option>最新商品</option>
+								<option>热卖商品</option>
+							</select>
+						</span>
+						<span>
+							<input type="text" maxlength="100" size="50"/>
+							<input type="button" value="搜索"/>
+						</span>
+						<span>
+							<a href="high.html" style="color: #fff;">高级搜索</a>
+						</span>
+						<div style="background: url(./img/d3.png); width: 300px; height: 24px; float: right; line-height: 24px;">
+							<span style="position: absolute; right: 190px;">
+								<a href="shoppingcart.html">购物车暂时为空</a>
+							</span>
+							<span style="position: absolute; right: 95px;">
+								<a href="close-account.html">去结算</a>
+							</span>
+							<span style="position: absolute; right: 10px;">
+								<a href="login.html">用户中心</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+
+			<!-- 网站主体 -->
+			<div id="pagebody" style="min-height: 500px;">
+				
+				<!-- 左部 -->
+				<div id="bleft">
+					<div id="userbox" class="userbox">
+						<h3>用户信息</h3>
+						<ul>
+							<li style="background: url(./img/1.png) no-repeat center left;"><a href="login.html">欢迎Tiger[退出]</a></li>
+							<li style="background: url(./img/2.png) no-repeat center left;"><a href="#">用户资料修改</a></li>
+							<li style="background: url(./img/3.png) no-repeat center left;"><a href="#">用户密码修改</a></li>
+							<li style="background: url(./img/4.png) no-repeat center left;"><a href="close-account.html">订单管理</a></li>
+							<li style="background: url(./img/6.png) no-repeat center left;"><a href="#">优惠卷10张</a></li>
+							<li style="background: url(./img/7.png) no-repeat center left;"><a href="#">兑换优惠卷</a></li>
+							<li style="background: url(./img/9.png) no-repeat center left;"><a href="#">缺货登记</a></li>
+							<li style="background: url(./img/8.png) no-repeat center left;"><a href="shoppingcart.html">购物车（2）</a></li>
+							<li style="background: url(./img/5.png) no-repeat center left;"><a href="#">我的收藏</a></li>
+							<li style="background: url(./img/10.png) no-repeat center left;"><a href="productlist.html">对比（0）</a></li>
+						</ul>
+					</div>										
+				</div>
+				
+				<!-- 中部 -->
+				<div id="bmiddle" style="width:760px; min-height: 500px;">
+					<div style="background: url(); line-height: 29px;">
+						<span>您的位置:</span>
+						<span>
+							<a href="index.html">首页</a>
+						</span>
+						》
+						<span>
+							<a href="close-account.html">购物车</a>
+						</span>
+					</div>	
+
+					<div>
+						<table id="shoppinglist">
+							<tr style="background: url(./img/sort1.png); height: 29px;line-height: 29px;">				
+								<th class="title">产品名称</th>
+								<th class="title">单价（元）</th>
+								<th class="title">数量</th>
+								<th class="title">合计（元）</th>
+								<th class="title">类型</th>							
+							</tr>
+							<tr>
+								<td>男士运动鞋 测试测试</td>
+								<td>￥<span class="price">528</td>
+								<td><span class="count">1</span></td>
+								<td>￥<span class="smalltotal">00.00</span></td>
+								<td>-</td>															
+							</tr>
+							<tr>
+								<td>美的电脑版电压力锅</td>
+								<td>￥<span class="price">398</span></td>
+								<td><span class="count">2</span></td>
+								<td>￥<span class="smalltotal">00.00</td>
+								<td>-</td>	
+							</tr>
+							<tr>
+								<td>美的电脑版电压力锅</td>
+								<td>￥<span class="price">398</td>
+								<td><span class="count">3</span></td>
+								<td>￥<span class="smalltotal">00.00</td>
+								<td>-</td>										
+							</tr>
+						</table>
+						<div class="shoppingdiv">
+							<span>共</span>
+							<span id="count" class="redfont">2</span>
+							<span>件商品</span>
+							<span>价格总计:</span>
+							<span id="total" class="redfont">￥917.00元</span>
+							<span>您是:</span>
+							<span>一般会员</span>
+							<span>（不享受折扣）</span>	
+						</div>
+						<div class="shoppingdiv">
+							<span>满500元可以免运费</span>
+						</div>						
+					</div>
+					<!-- 信息填写 -->
+					<div>
+						<div class="userinfobox">
+							<div class="usertitle">
+								<img src="./img/lb.png" />
+								使用优惠卷
+							</div>
+							<div class="tableinfo">
+								<table>
+									<tr>
+										<td>卡号: <input type="text" id="cardNo" size="20" /></td>
+										<td>密码: <input type="text" id="cardPassword" size="20" /></td>
+										<td><a href="#" onclick="return yanzhengyouhuika();">验证</a></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						
+						<div class="userinfobox">
+							<div class="usertitle">
+								<img src="./img/lb.png" />
+								请填写订货人的详细信息
+							</div>
+							<div class="tableinfo">
+								<table>
+									<tr>
+										<td>姓 名: <input type="text" id="username" size="36" /></td>
+									</tr>
+									<tr>
+										<td>电 话: <input type="text" id="mobile" size="36" />[请填写13或15开头的手机号码]</td>
+									</tr>
+									<tr>
+										<td>EMail:<input type="text" id="Email" size="36" /></td>
+									</tr>
+									<tr>
+										<td>地 址: <input type="text" id="Address" size="36" /></td>
+									</tr>
+									<tr>
+										<td>邮 编: <input type="text" id="postno" size="36" /></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						
+						<div class="userinfobox">
+							<div class="usertitle">
+								<img src="./img/lb.png" />
+								请填写订货人的详细信息
+							</div>
+							<div class="tableinfo">
+								<table>
+									<tr>
+										<td>客户姓名: <input type="text" size="36" /></td>
+									</tr>
+									<tr>
+										<td>联系电话: <input type="text" size="36" /></td>
+									</tr>
+									<tr>
+										<td>电子邮箱: <input type="text" size="36" /></td>
+									</tr>
+									<tr>
+										<td>联系地址: <input type="text" size="36" /></td>
+									</tr>
+									<tr>
+										<td>邮 编: <input type="text" size="36" /></td>
+									</tr>
+									<tr>
+										<td>到货时间: <input type="radio" checked="checked" size="18" />工作时间 8:00~23:00</td>
+									</tr>
+									<tr>
+										<td>付款方式: <input type="radio" checked="checked" size="18" />银行转账【中国招商银行: 户名: 何虎 6225 1234 1234 1234】</td>
+									</tr>
+									<tr>
+										<td>
+											送货方式:
+											 <br />
+											<input type="radio"checked="checked" name="songhuo" size="18" />
+											快递【实惠快速，一般3天到货，收费12元】
+											<br />
+											<input type="radio" name="songhuo" size="18" />
+											EMS邮寄【邮政特快，一般3天到货，收费23元】
+										</td>
+									</tr>
+									<tr>
+										<td>
+											发票: <input type="radio" checked="checked" name="fapiao" size="18" />
+											不需要
+											<input type="radio" name="fapiao" size="18" />
+											需要（开票需要加收5%税费）
+										</td>
+									</tr>
+									<tr>
+										<td>
+											备注:
+											 <textarea rows="3"></textarea>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											 <input type="submit" value="提交订单" onclick="return yanzhenguserinfo();"/>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						
+					</div>
+					<!-- 信息填写 -->
+				</div>
+				
+			</div>
+			
+			<!-- 网站底部 -->
+			<div id="pagefooter" style="width: 980px; margin: 0px auto;">
+				<!-- 底部导航 -->
+				<div id="footnav">
+					<ul>
+						<li class="listnav">
+							<h4>关于我们</h4>
+							<ul>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">企业介绍</a></li>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">发展经历</a></li>
+							</ul>
+						</li>
+						<li class="listnav">
+							<h4>付款方式</h4>
+							<ul>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">企业介绍</a></li>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">发展经历</a></li>
+							</ul>
+						</li>
+						<li class="listnav">
+							<h4>送货方式</h4>
+							<ul>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">企业介绍</a></li>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">发展经历</a></li>
+							</ul>
+						</li>
+						<li class="listnav">
+							<h4>售后服务</h4>
+							<ul>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">企业介绍</a></li>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">发展经历</a></li>
+							</ul>
+						</li>
+						<li class="listnav">
+							<h4>购物帮助</h4>
+							<ul>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">企业介绍</a></li>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">发展经历</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>				
+			</div>	
+			<div id="footinfo">
+				<div>
+					<span>淘宝店</span>
+					<span>易趣店</span>
+					<span>京东店</span>
+					<span>有啊店</span>
+				</div>
+				<div>
+					<span>CopyRight2019.11 版权所有: 四加三商城</span>
+				</div>
+				<div>
+					<span>客服热线: 888-888888, 售后服务: 888-000088</span>
+				</div>
+				<div>
+					<span>客服邮箱:437737257@qq.com, 技术支持: 15988652@qq.com</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

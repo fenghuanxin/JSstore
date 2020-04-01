@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="./js/gettime.js"></script>
+		<script type="text/javascript" src="./js/jquery-3.4.1.js"></script>
+		<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="./css/basic.css" />
+		<script type="text/javascript" src="./js/basic.js"></script>
+	</head>
+
+	<body>
+		<div id="containter">
+			<!-- 网站头部 -->
+			<div id="pagetop" style="position: relative;">
+				<div class="indexlogo"><img src="./img/logo.png"></div>
+				<div class="topinfo">
+					<span>
+						欢迎登陆四加三商城！ 
+						要购物？
+						<a href="login.html">先登陆</a>
+						新用户？
+						<a href="register.html">免费注册</a>
+					</span>
+				</div>
+				<div class="topnav" style="clear: both; position: absolute; top:0px; left: 600px;">
+					<div class="topnavlist">
+						<ul>
+							<li><a href="">帮助中心</a></li>
+							<li><a href="">客户反馈</a></li>
+							<li><a href="">网站地图</a></li>
+							<li><a href="">加入收藏</a></li>
+							<br />
+							<li style="width: 200px;"><span id="Clock"></span></li>
+						</ul>
+					</div>
+					<div>
+						<marquee direction="up" height="25px" style="text-indent:40px;"><a href="">新公告：明天有秒杀公告</a></marquee>
+					</div>
+				</div>
+				
+				<!-- 主导航 -->
+				<div id="nav" style="clear: both;">
+					<div style="background: url(./img/top_1.png); height: 35px;">
+						<ul id="navlist">
+							<li><a href="index.html">网站首页</a></li>
+							<li><a href="#">分类导航</a></li>
+							<li><a href="#">购物帮助</a></li>
+							<li><a href="productlist.html">产品列表</a></li>
+							<li><a href="prolistproice.html">报价单</a></li>
+							<li><a href="close-account.html">发货单</a></li>
+						</ul>
+					</div>
+					<div class="cast">
+						<span style="color: #fff; font-size: 14px;">商品搜索</span>
+						<span>
+							<select>
+								<option>所有分类</option>
+								<option>最新商品</option>
+								<option>热卖商品</option>
+							</select>
+						</span>
+						<span>
+							<input type="text" maxlength="100" size="50" />
+							<input type="button" value="搜索" />
+						</span>
+						<span>
+							<a href="high.html" style="color: #fff;">高级搜索</a>
+						</span>
+						<div style="background: url(./img/d3.png); width: 300px; height: 24px; float: right; line-height: 24px;">
+							<span style="position: absolute; right: 190px;">
+								<a href="shoppingcart.html">购物车暂时为空</a>
+							</span>
+							<span style="position: absolute; right: 95px;">
+								<a href="close-account.html">去结算</a>
+							</span>
+							<span style="position: absolute; right: 10px;">
+								<a href="login.html">用户中心</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+
+			<!-- 网站主体 -->
+			<div id="pagebody">
+				
+				<!-- 左部 -->
+				<div id="bleft">
+					<div id="userbox" class="userbox">
+						<h3>用户信息</h3>
+						<ul>
+							<li style="background: url(./img/1.png) no-repeat center left;"><a href="login.html">注册/登陆</a></li>
+							<li style="background: url(./img/8.png) no-repeat center left;"><a href="shoppingcart.html">购物车（0）</a></li>
+							<li style="background: url(./img/10.png) no-repeat center left;"><a href="productlist.html">对比（0）</a></li>
+						</ul>
+					</div>
+					<div id="productbox" class="productbox">
+						<h3>商品分类</h3>
+						<div style="border: solid 1px red; border-top: none;">
+							<div class="box">
+								<h4><img src="./img/dot.png">家用电器</h4>
+								<ul>
+									<li><span><a href="#">大冰箱</a></span>|<span><a href="#">电磁炉</a></span></li>
+									<li><span><a href="#">冷饮机</a></span>|<span><a href="#">油烟机</a></span></li>
+									<li><span><a href="#">空调器</a></span>|<span><a href="#">热水器</a></span></li>
+									<li><span><a href="#l">电风扇</a></span>|<span><a href="#">加湿器</a></span></li>
+								</ul>
+							</div>
+							<div class="box">
+								<h4><img src="./img/dot.png">数码产品</h4>
+								<ul>
+									<li><span><a href="producttype.html">摄像机</a></span>|<span><a href="producttype.html">数码相机</a></span></li>
+									<li><span><a href="producttype.html">扫描仪</a></span>|<span><a href="producttype.html">数控家电</a></span></li>
+									<li><span><a href="producttype.html">无人机</a></span>|<span><a href="producttype.html">手机</a></span></li>
+									<li><span><a href="producttype.html">扫描仪</a></span>|<span><a href="producttype.html">游戏主机</a></span></li>
+								</ul>
+							</div>
+							<div class="box">
+								<h4><img src="./img/dot.png">电脑产品</h4>
+								<ul>
+									<li><span><a href="producttype.html">计算机</a></span>|<span><a href="producttype.html">路由器</a></span></li>
+									<li><span><a href="producttype.html">收音机</a></span>|<span><a href="producttype.html">笔记本电源</a></span></li>
+									<li><span><a href="producttype.html">电子书</a></span>|<span><a href="producttype.html">台式配件</a></span></li>
+									<li><span><a href="producttype.html">交换机</a></span>|<span><a href="producttype.html">电源</a></span></li>
+								</ul>
+							</div>
+							<div class="box">
+								<h4><img src="./img/dot.png">常用百货</h4>
+								<ul>
+									<li><span><a href="producttype.html">垃圾桶</a></span>|<span><a href="producttype.html">洗菜篮</a></span></li>
+									<li><span><a href="producttype.html">喷雾器</a></span>|<span><a href="producttype.html">紫砂杯</a></span></li>
+									<li><span><a href="producttype.html">储物罐</a></span>|<span><a href="producttype.html">遮阳伞</a></span></li>
+									<li><span><a href="producttype.html">削皮器</a></span>|<span><a href="producttype.html">工艺品摆件</a></span></li>
+								</ul>
+							</div>
+						</div>
+					</div>			
+					<div>
+						<img src="img/advertising.gif" width="195" height="83"/>
+					</div>
+					<div id="brandbox">
+						<h4>推荐品牌</h4>
+						<div>
+							<ul>
+								<li><a href="#"><img src="./img/brand1.png" width="60" height="30"></a></li>
+								<li><a href="#"><img src="./img/brand2.png" width="60" height="30"></a></li>
+								<li><a href="#"><img src="./img/brand3.png" width="60" height="30"></a></li>
+								<li><a href="#"><img src="./img/brand4.png" width="60" height="30"></a></li>
+								<li><a href="#"><img src="./img/brand5.png" width="60" height="30"></a></li>
+								<li><a href="#"><img src="./img/brand6.png" width="60" height="30"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div>
+						<img src="img/advertising.gif" width="195" height="83"/>
+					</div>
+					<div id="collaboratebox">
+						<h4>合作加盟</h4>
+						<div>
+							<ul>
+								<li><a href="#">四加三商城</a></li>
+								<li><a href="#">四加三超市</a></li>
+								<li><a href="#">四加三学校</a></li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<!-- 中部 -->
+				<div id="bmiddle">
+					<div id="banner">
+						<div id="banner_bg"></div>
+						<div id="banner_info"></div>
+						<ul>
+							<li>1</li>
+							<li>2</li>
+							<li>3</li>
+							<li>4</li>
+							<li>5</li>
+						</ul>
+						<div id="banner_list">
+							<a href="#" target="_blank"><img src="img/p1.png" alt="商品1"></a>
+							<a href="#" target="_blank"><img src="img/p2.png" alt="商品1"></a>
+							<a href="#" target="_blank"><img src="img/p3.png" alt="商品1"></a>
+							<a href="#" target="_blank"><img src="img/p4.png" alt="商品1"></a>
+							<a href="#" target="_blank"><img src="img/p5.png" alt="商品1"></a>
+						</div>	
+										
+					</div>
+					
+					<!-- 推荐商品 -->
+					<div class="productbox2">
+						<h4>推荐商品</h4>
+						<div>
+							<ul>
+								<li>
+									<div>
+										<a href="productinfo.html"><img src="img/electric-cooker.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>高压电饭锅</div>
+										<div>某某品牌</div>
+										<div class="price">￥389.00</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity1.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>帆布鞋</div>
+										<div>某某品牌</div>
+										<div class="price">￥152.00</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity2.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>休闲鞋</div>
+										<div>某某品牌</div>
+										<div class="price">￥241.00</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity7.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>电脑</div>
+										<div>某某品牌</div>
+										<div class="price">￥3454.00</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity17.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>炒菜锅</div>
+										<div>某某品牌</div>
+										<div class="price">￥177.00</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity9.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>筷子</div>
+										<div>某某品牌</div>
+										<div class="price">￥19.00</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity8.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>一体机</div>
+										<div>某某品牌</div>
+										<div class="price">￥6587.00</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity18.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>柜子</div>
+										<div>某某品牌</div>
+										<div class="price">￥477.00</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity10.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>被子</div>
+										<div>某某品牌</div>
+										<div class="price">￥299.00</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity20.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>显示器</div>
+										<div>某某品牌</div>
+										<div class="price">￥1599.00</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+					<!-- 热卖商品 -->
+					<div class="productbox2">
+						<h4>热卖商品</h4>
+						<div>
+							<ul>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity3.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>高跟鞋</div>
+										<div>某某品牌</div>
+										<div class="price">￥499.00</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity13.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>冰箱</div>
+										<div>某某品牌</div>
+										<div class="price">￥899.00</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity21.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>瑜伽垫</div>
+										<div>某某品牌</div>
+										<div class="price">￥79.00</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity19.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>电视</div>
+										<div>某某品牌</div>
+										<div class="price">￥1099.00</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity4.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>五指鞋</div>
+										<div>某某品牌</div>
+										<div class="price">￥59.00</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+					<!-- 特价商品 -->
+					<div class="productbox2">
+						<h4>特价商品</h4>
+						<div>
+							<ul>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity22.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>高数2件套</div>
+										<div>某某品牌</div>
+										<div class="price">￥108.00</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity16.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>儿童自行车</div>
+										<div>某某品牌</div>
+										<div class="price">￥299.00</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity12.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>充电线</div>
+										<div>某某品牌</div>
+										<div class="price">￥9.99</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity6.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>拖鞋</div>
+										<div>某某品牌</div>
+										<div class="price">￥18.00</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity11.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>儿童被</div>
+										<div>某某品牌</div>
+										<div class="price">￥188.00</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+					<!-- 最新商品 -->
+					<div class="productbox2">
+						<h4>最新商品</h4>
+						<div>
+							<ul>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity23.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>数据结构</div>
+										<div>某某品牌</div>
+										<div class="price">￥69.00</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity5.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>安踏鞋</div>
+										<div>某某品牌</div>
+										<div class="price">￥599.00</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity15.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>山地车</div>
+										<div>某某品牌</div>
+										<div class="price">￥588.00</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity24.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>JavaScript高级程序</div>
+										<div>某某品牌</div>
+										<div class="price">￥199.00</div>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#"><img src="./img/commodity14.png" width="100" height="100"></a>
+									</div>
+									<div>
+										<div>冰箱</div>
+										<div>某某品牌</div>
+										<div class="price">￥788.00</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+				
+				<!-- 右部 -->
+				<div id="bright">
+					<!-- 网站新闻 -->
+					<div class="rbox">
+						<h4>网站新闻</h4>
+						<ul>
+							<li><a href="https://news.sina.cn/zt_d/yiqing0121">实时更新：新型冠状病毒肺炎</a></li>
+							<li><a href="https://news.sina.com.cn/c/2020-03-30/doc-iimxxsth2665538.shtml">一问三不知”的唐主任</a></li>
+							<li><a href="http://finance.sina.com.cn/stock/zqgd/2020-03-30/doc-iimxyqwa4027844.shtml">央行“降息”</a></li>
+							<li><a href="https://news.sina.com.cn/c/2020-03-30/doc-iimxyqwa4046174.shtml">一列客运火车在湖南境内出轨</a></li>
+							<li><a href="https://news.sina.com.cn/gov/2020-03-30/doc-iimxyqwa4034271.shtml">四月新规，来了！</a></li>
+							<li><a href="#">网站新闻测试1</a></li>
+							<li><a href="#">网站新闻测试2</a></li>
+							<li><a href="#">网站新闻测试3</a></li>
+						</ul>
+					</div>
+					<!-- 客户服务 -->
+					<div class="rbox">
+						<h4>客户服务</h4>
+						<div class="service">
+							<div>
+								<div>电话: 888-8888</div>
+								<div>邮箱: 437737257@qq.com</div>
+								<div>传真: 888-8888</div>
+							</div>
+							<div>
+								<div>
+									<span>
+										<a href="http://wpa.qq.com/msgrd?v=3&amp;in=123456789&amp;site=www.maiziedu.com&amp;menu=yes">
+										<img src="./img/qq.png" width="16" height="22"/>
+										</a>
+										<span>售前服务</span>
+									</span>
+									<span>
+										<a href="http://wpa.qq.com/msgrd?v=3&amp;in=123456789&amp;site=www.maiziedu.com&amp;menu=yes">
+										<img src="./img/qq.png" width="16" height="22"/>
+										</a>
+										<span>售后客服</span>
+									</span>
+								</div>
+								<div>
+									<span>
+										<a target="_blank" href="http://www.taobao.com/webww/ww.php?ver=3&tould=%E6%94%BE%E9%A3%9E%E6%A2%A6%E6%83%B3in&siteid=cntaobao&status=1&charset=utf-8">
+										<img src="./img/aliwangwang.png" width="16" height="22" alt="">
+										</a>
+										<span>掌柜 张三</span>				
+									</span>
+									<span>
+										<a target="_blank" href="http://www.taobao.com/webww/ww.php?ver=3&tould=%E6%94%BE%E9%A3%9E%E6%A2%A6%E6%83%B3in&siteid=cntaobao&status=1&charset=utf-8">
+										<img src="./img/aliwangwang.png" width="16" height="22" alt="">
+										</a>
+										<span>掌柜 张四</span>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- 分类推荐商品 -->
+					<div class="rbox">
+						<h4>分类推荐商品</h4>
+						<div style="border: 1px solid red; border-top: none; min-height: 500px;">
+							<div class="servicebox">
+								<div style="width: 50px; float: left; line-height: 100px;">
+									<img src="img/electric-cooker.png" width="50" height="50"/>
+								</div>
+								<div style="width: 120px; float: left; margin-left: 10px; line-height: 25px;">
+									无敌电饭，价格实惠，品质保证。无敌电饭，价格实惠，品质保证。
+								</div>					
+							</div>
+							<div class="servicebox">
+								<div style="width: 50px; float: left; line-height: 100px;">
+									<img src="./img/commodity6.png" width="50" height="50"/>
+								</div>
+								<div style="width: 120px; float: left; margin-left: 10px; line-height: 25px;">
+									无敌拖鞋，价格实惠，品质保证。无敌拖鞋，打人贼强，老板担保。
+								</div>					
+							</div>
+							<div class="servicebox">
+								<div style="width: 50px; float: left; line-height: 100px;">
+									<img src="./img/commodity22.png" width="50" height="50"/>
+								</div>
+								<div style="width: 120px; float: left; margin-left: 10px; line-height: 25px;">
+									秃头高数，价格实惠，品质保证。不秃包赔，实实在在，早晚秃头。
+								</div>					
+							</div>
+							<div class="servicebox">
+								<div style="width: 50px; float: left; line-height: 100px;">
+									<img src="./img/commodity13.png" width="50" height="50"/>
+								</div>
+								<div style="width: 120px; float: left; margin-left: 10px; line-height: 25px;">
+									超冷冰箱，价格实惠，品质保证。老板跑路，赶紧收购，我不欺人。
+								</div>					
+							</div>
+							<div class="servicebox">
+								<div style="width: 50px; float: left; line-height: 100px;">
+									<img src="./img/commodity16.png" width="50" height="50"/>
+								</div>
+								<div style="width: 120px; float: left; margin-left: 10px; line-height: 25px;">
+									儿童专用，价格实惠，品质保证。儿童专用，价格实惠，品质保证。
+								</div>					
+							</div>
+						</div>
+					</div>
+					
+					<!-- 分类推荐商品 -->
+					
+				</div>
+			</div>
+			
+			<!-- 网站底部 -->
+			<div id="pagefooter">
+				<!-- 底部导航 -->
+				<div id="footnav">
+					<ul>
+						<li class="listnav">
+							<h4>关于我们</h4>
+							<ul>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">企业介绍</a></li>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">发展经历</a></li>
+							</ul>
+						</li>
+						<li class="listnav">
+							<h4>付款方式</h4>
+							<ul>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">企业介绍</a></li>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">发展经历</a></li>
+							</ul>
+						</li>
+						<li class="listnav">
+							<h4>送货方式</h4>
+							<ul>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">企业介绍</a></li>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">发展经历</a></li>
+							</ul>
+						</li>
+						<li class="listnav">
+							<h4>售后服务</h4>
+							<ul>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">企业介绍</a></li>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">发展经历</a></li>
+							</ul>
+						</li>
+						<li class="listnav">
+							<h4>购物帮助</h4>
+							<ul>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">企业介绍</a></li>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">发展经历</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>				
+			</div>	
+			<div id="footinfo">
+				<div>
+					<span>淘宝店</span>
+					<span>易趣店</span>
+					<span>京东店</span>
+					<span>有啊店</span>
+				</div>
+				<div>
+					<span>CopyRight2019.11 版权所有: 四加三商城</span>
+				</div>
+				<div>
+					<span>客服热线: 888-888888, 售后服务: 888-000088</span>
+				</div>
+				<div>
+					<span>客服邮箱:437737257@qq.com, 技术支持: 15988652@qq.com</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>报价列表</title>
+		<script type="text/javascript" src="./js/gettime.js"></script>
+		<script type="text/javascript" src="./js/jquery-3.4.1.js"></script>
+		<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="./css/basic.css" />
+		<script type="text/javascript" src="./js/basic.js"></script>
+		<link rel="stylesheet" type="text/css" href="./css/prolistproice.css">
+
+		<script type="application/javascript">
+			$(document).ready(function(e) {
+				var color = "#eee";
+				$(".tbprolist tr:odd td").css("background-color",color); //改变偶数行背景色
+					/*把背景色保持到属性中 */
+					$(".tbprolist tr:odd").attr("bg",color);
+					$(".tbprolist tr:even").attr("bg","#fff");
+					
+					/* 鼠标移动到上面的时候显示浅蓝色 */
+					$(".tbprolist tr td").mouseover(function(){
+						$(this).parent().find("td").css("background-color","#d5f4fe");
+					});
+					
+					/* 当鼠标在表格上移动时，离开的那一行背景恢复 */
+					$(document).ready(function() {
+						$(".tbprolist tr td").mouseout(function(){
+							var bgc = $(this).parent().attr("bg");
+							$(this).parent().find("td").css("background-color",bgc);
+						});
+					})
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="containter">
+			<!-- 网站头部 -->
+			<div id="pagetop" style="position: relative;">
+				<div class="indexlogo"><img src="./img/logo.png"></div>
+				<div class="topinfo">
+					<span>
+						欢迎登陆四加三商城！ 
+						要购物？
+						<a href="login.html">先登陆</a>
+						新用户？
+						<a href="register.html">免费注册</a>
+					</span>
+				</div>
+				<div class="topnav" style="clear: both; position: absolute; top:0px; left: 600px;">
+					<div class="topnavlist">
+						<ul>
+							<li><a href="">帮助中心</a></li>
+							<li><a href="">客户反馈</a></li>
+							<li><a href="">网站地图</a></li>
+							<li><a href="">加入收藏</a></li>
+							<br />
+							<li style="width: 200px;"><span id="Clock"></span></li>
+						</ul>
+					</div>
+					<div>
+						<marquee direction="up" height="25px" style="text-indent:40px;"><a href="">新公告：明天有秒杀公告</a></marquee>
+					</div>
+				</div>
+				
+				<!-- 主导航 -->
+				<div id="nav" style="clear: both;">
+					<div style="background: url(./img/top_1.png); height: 35px;">
+						<ul id="navlist">
+							<li><a href="index.html">网站首页</a></li>
+							<li><a href="#">分类导航</a></li>
+							<li><a href="#">购物帮助</a></li>
+							<li><a href="productlist.html">产品列表</a></li>
+							<li><a href="prolistproice.html">报价单</a></li>
+							<li><a href="close-account.html">发货单</a></li>
+						</ul>
+					</div>
+					<div class="cast">
+						<span style="color: #fff; font-size: 14px;">商品搜索</span>
+						<span>
+							<select>
+								<option>所有分类</option>
+								<option>最新商品</option>
+								<option>热卖商品</option>
+							</select>
+						</span>
+						<span>
+							<input type="text" maxlength="100" size="50"/>
+							<input type="button" value="搜索"/>
+						</span>
+						<span>
+							<a href="high.html" style="color: #fff;">高级搜索</a>
+						</span>
+						<div style="background: url(./img/d3.png); width: 300px; height: 24px; float: right; line-height: 24px;">
+							<span style="position: absolute; right: 190px;">
+								<a href="shoppingcart.html">购物车暂时为空</a>
+							</span>
+							<span style="position: absolute; right: 95px;">
+								<a href="close-account.html">去结算</a>
+							</span>
+							<span style="position: absolute; right: 10px;">
+								<a href="login.html">用户中心</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+
+			<!-- 网站主体 -->
+			<div id="pagebody" style="min-height: 500px;">
+				<div style="text-align: right; line-height: 26px;">
+					<span>打印报价单</span>
+				</div>
+				<div>
+					<h4>家用电器设备</h4>
+					<div>
+						<table style="width: 100%" class="tbprolist">
+							<tr>
+								<th>图片</th>
+								<th>商品</th>
+								<th>零售价</th>
+								<th>本站价</th>
+								<th>库存</th>
+								<th>购买</th>
+							</tr>
+							<tr>
+								<td><img src="./img/electric-cooker.png" width="50" height="50"></td>
+								<td>美的电饭锅</td>
+								<td>￥888.00</td>
+								<td class="red">￥688.00</td>
+								<td>200</td>
+								<td><a href="shoppingcart.html">定购</a></td>
+							</tr>
+							<tr>
+								<td><img src="./img/electric-cooker.png" width="50" height="50"></td>
+								<td>美的电饭锅</td>
+								<td>￥888.00</td>
+								<td class="red">￥688.00</td>
+								<td>200</td>
+								<td><a href="shoppingcart.html">定购</a></td>
+							</tr>
+							<tr>
+								<td><img src="./img/electric-cooker.png" width="50" height="50"></td>
+								<td>美的电饭锅</td>
+								<td>￥888.00</td>
+								<td class="red">￥688.00</td>
+								<td>200</td>
+								<td><a href="shoppingcart.html">定购</a></td>
+							</tr>
+							<tr>
+								<td><img src="./img/electric-cooker.png" width="50" height="50"></td>
+								<td>美的电饭锅</td>
+								<td>￥888.00</td>
+								<td class="red">￥688.00</td>
+								<td>200</td>
+								<td><a href="shoppingcart.html">定购</a></td>
+							</tr>
+							<tr>
+								<td><img src="./img/electric-cooker.png" width="50" height="50"></td>
+								<td>美的电饭锅</td>
+								<td>￥888.00</td>
+								<td class="red">￥688.00</td>
+								<td>200</td>
+								<td><a href="shoppingcart.html">定购</a></td>
+							</tr>
+							<tr>
+								<td><img src="./img/electric-cooker.png" width="50" height="50"></td>
+								<td>美的电饭锅</td>
+								<td>￥888.00</td>
+								<td class="red">￥688.00</td>
+								<td>200</td>
+								<td><a href="shoppingcart.html">定购</a></td>
+							</tr>
+							<tr>
+								<td><img src="./img/electric-cooker.png" width="50" height="50"></td>
+								<td>美的电饭锅</td>
+								<td>￥888.00</td>
+								<td class="red">￥688.00</td>
+								<td>200</td>
+								<td><a href="shoppingcart.html">定购</a></td>
+							</tr>
+							<tr>
+								<td><img src="./img/electric-cooker.png" width="50" height="50"></td>
+								<td>美的电饭锅</td>
+								<td>￥888.00</td>
+								<td class="red">￥688.00</td>
+								<td>200</td>
+								<td><a href="shoppingcart.html">定购</a></td>
+							</tr>
+							<tr>
+								<td><img src="./img/electric-cooker.png" width="50" height="50"></td>
+								<td>美的电饭锅</td>
+								<td>￥888.00</td>
+								<td class="red">￥688.00</td>
+								<td>200</td>
+								<td><a href="shoppingcart.html">定购</a></td>
+							</tr>
+							<tr>
+								<td><img src="./img/electric-cooker.png" width="50" height="50"></td>
+								<td>美的电饭锅</td>
+								<td>￥888.00</td>
+								<td class="red">￥688.00</td>
+								<td>200</td>
+								<td><a href="shoppingcart.html">定购</a></td>
+							</tr>
+						</table>
+						<div class="page">
+							<a href="#">第1页/共1页</a>
+							<a href="#">上一页</a>
+							<a href="#">下一页</a>
+							<span>页面跳转</span>
+							<input type="text" size="2">页
+						</div>
+					</div>
+				</div>
+				
+
+			</div>
+			
+			<!-- 网站底部 -->
+			<div id="pagefooter" style="width: 980px; margin: 0px auto;">
+				<!-- 底部导航 -->
+				<div id="footnav">
+					<ul>
+						<li class="listnav">
+							<h4>关于我们</h4>
+							<ul>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">企业介绍</a></li>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">发展经历</a></li>
+							</ul>
+						</li>
+						<li class="listnav">
+							<h4>付款方式</h4>
+							<ul>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">企业介绍</a></li>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">发展经历</a></li>
+							</ul>
+						</li>
+						<li class="listnav">
+							<h4>送货方式</h4>
+							<ul>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">企业介绍</a></li>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">发展经历</a></li>
+							</ul>
+						</li>
+						<li class="listnav">
+							<h4>售后服务</h4>
+							<ul>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">企业介绍</a></li>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">发展经历</a></li>
+							</ul>
+						</li>
+						<li class="listnav">
+							<h4>购物帮助</h4>
+							<ul>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">企业介绍</a></li>
+								<li><a href="#">发展经历</a></li>
+								<li><a href="#">发展经历</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>				
+			</div>	
+			<div id="footinfo">
+				<div>
+					<span>淘宝店</span>
+					<span>易趣店</span>
+					<span>京东店</span>
+					<span>有啊店</span>
+				</div>
+				<div>
+					<span>CopyRight2019.11 版权所有: 四加三商城</span>
+				</div>
+				<div>
+					<span>客服热线: 888-888888, 售后服务: 888-000088</span>
+				</div>
+				<div>
+					<span>客服邮箱:437737257@qq.com, 技术支持: 15988652@qq.com</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
