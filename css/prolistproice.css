@@ -1,0 +1,14 @@
+.tbprolist {
+	width: 100%;
+	text-align: center;
+}
+.tborilist th {
+	background: #eee;
+	line-height: 26px;
+}
+.red {
+	color:red;
+}
+.page a {
+	margin: 0px 10px;
+}
