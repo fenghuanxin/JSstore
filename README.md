@@ -3,4 +3,4 @@
 <br>
 个人实战小项目
 <br>
-<img src=“img/background.png”>
+![image text](https://github.com/fenghuanxin/JSstore/blob/master/img/background.png)
