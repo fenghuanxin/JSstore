@@ -1,6 +1,6 @@
 四加三商城
 ====
 <br>
-######个人实战小项目
+个人实战小项目
 <br>
-<img src="./img/bachground.png">
+<img src="./img/background.png">
