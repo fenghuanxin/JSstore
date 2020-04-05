@@ -3,4 +3,4 @@
 <br>
 个人实战小项目
 --------
-![test](https://github.com/fenghuanxin/JSstore/blob/master/img/background.png)
+ ![Image text]( https://github.com/fenghuanxin/JSstore/blob/master/img/background.png?raw=true)
