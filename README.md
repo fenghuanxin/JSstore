@@ -3,4 +3,4 @@
 <br>
 ### 个人实战小项目
 
-![Image](“https://github.com/fenghuanxin/JSstore/blob/master/img/background.png?raw=true”)
+![Image](img/background.png)
