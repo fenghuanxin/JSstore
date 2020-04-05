@@ -2,8 +2,8 @@
 ====
 <br>
 四加三商城
-<br>
+----------
 首页展示
 ====
-<br>
+
 ![Image](img/background.png)
